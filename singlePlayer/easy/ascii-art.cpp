@@ -12,12 +12,11 @@ unsigned int getIndex(char letter)
 
   letter = tolower(letter);
   i = 0;
-  while(i < alphabet.size())
-    {
+  while(i < alphabet.size()) {
       if (alphabet[i] == letter)
 	return i;
       i++;
-    }
+  }
   return 26;
 }
 
@@ -38,22 +37,18 @@ int main()
     motif.push_back(ROW);
   }
 
-  for (unsigned int i = 0; i < T.size(); i++)
-    {
+  for (unsigned int i = 0; i < T.size(); i++) {
       index = getIndex(T[i]);
-      for (unsigned int j = 0; j < motif.size(); j++)
-	{
-	  for (unsigned int k = 0; k < L; k++)
-	    {
+      for (unsigned int j = 0; j < motif.size(); j++) {
+	  for (unsigned int k = 0; k < L; k++) {
 	      if (result.size() == j)
 		result.push_back(new string(""));
 	      *result[j] += motif[j][index * L + k];
-	    }
-	}
-    }
+	  }
+      }
+  }
 
-  for (unsigned int l = 0; l < result.size(); l++)
-    {
+  for (unsigned int l = 0; l < result.size(); l++) {
       cout << *result[l] << endl;
-    }
+  }
 }
