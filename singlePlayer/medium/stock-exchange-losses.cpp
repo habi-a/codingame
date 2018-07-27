@@ -5,28 +5,33 @@
 
 using namespace std;
 
-int main()
+int                         main()
 {
-  int n;
-  cin >> n; cin.ignore();
-  vector<unsigned int> values;
-  vector<int> valuesDiff;
-  vector<int> maxLosses;
-  for (int i = 0; i < n; i++) {
-    int v;
-    cin >> v; cin.ignore();
-    values.push_back(v);
-  }
+    int                     n;
+    vector<int>             valuesDiff;
+    vector<int>             maxLosses;
+    vector<unsigned int>    values;
 
-  for (unsigned int i = 0; i < values.size() - 1; i++)
-    valuesDiff.push_back(values[i + 1] - values[i]);
+    cin >> n; cin.ignore();
 
-  maxLosses.push_back(valuesDiff[0]);
-  for (unsigned int i = 1; i < valuesDiff.size(); i++)
-    maxLosses.push_back(min(valuesDiff[i], (maxLosses[i - 1] + valuesDiff[i])));
+    for (int i = 0; i < n; i++)
+    {
+        int                 v;
+        cin >> v; cin.ignore();
+        values.push_back(v);
+    }
 
-  auto pMax = *std::min_element(maxLosses.begin(), maxLosses.end());
-  if (pMax > 0)
-    pMax = 0;
-  cout << pMax << endl;
+    for (unsigned int i = 0; i < values.size() - 1; i++)
+        valuesDiff.push_back(values[i + 1] - values[i]);
+
+    maxLosses.push_back(valuesDiff[0]);
+    for (unsigned int i = 1; i < valuesDiff.size(); i++)
+        maxLosses.push_back(min(valuesDiff[i], (maxLosses[i - 1] + valuesDiff[i])));
+
+    auto pMax = *std::min_element(maxLosses.begin(), maxLosses.end());
+    if (pMax > 0)
+        pMax = 0;
+
+    cout << pMax << endl;
+    return 0;
 }
