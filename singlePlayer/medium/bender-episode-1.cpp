@@ -8,7 +8,6 @@ using namespace std;
 class Map
 {
 public:
-    // Constructor / Destructor
     Map(vector<string> &carte) : _carte(carte)
     {
         _isTeleporteur = false;
@@ -35,7 +34,6 @@ public:
     };
     ~Map() {};
 
-    // Getter
     unsigned int const& getXBender() const { return _xBender; };
     unsigned int const& getYBender() const { return _yBender; };
     unsigned int const& getXFirstTeleporteur() const { return _xFirstTeleporteur; };
@@ -50,7 +48,6 @@ public:
     bool isInversor(const unsigned int x, const unsigned int y) const { return (_carte[y][x] == 'I'); };
     bool isChangeDirection(const unsigned int x, const unsigned int y) const { return (_carte[y][x] == 'N' || _carte[y][x] == 'S' || _carte[y][x] == 'E' || _carte[y][x] == 'W'); };
 
-    // Setter
     void removeCell(const unsigned int x, const unsigned y) { _carte[y][x] = '_'; };
 
 private:
@@ -68,7 +65,6 @@ private:
 class Bender
 {
 public:
-    // Constructor / Destructor
     Bender(Map &map) : _map(map)
     {
         _x = _map.getXBender();
@@ -79,14 +75,12 @@ public:
     };
     ~Bender() {};
 
-    // Getter
     bool isCasseur() const { return _casseur; };
     bool isDead() const { return (_map.getCell(_x, _y) == '$'); };
     unsigned int const& getX() const { return _x; };
     unsigned int const& getY() const { return _y; };
     string const& getDirection() const { return _direction; };
 
-    // Setter
     void setX(const unsigned int x) { _x = x; };
     void setY(const unsigned int y) { _y = y; };
     void setDirection(string const& direction) {_direction = direction; };
@@ -120,7 +114,6 @@ public:
             {
                 _direction = direction;
                 return direction;
-                cerr << "here ?" << endl;
             }
         }
         return "LOOP";
@@ -228,7 +221,7 @@ int                 main()
     Map map(carte);
     Bender bender(map);
 
-    while(!bender.isDead())
+    while (!bender.isDead())
     {
         results.push_back(bender.chooseDirection());
         bender.move();
@@ -242,6 +235,6 @@ int                 main()
     }
 
     for (auto direction : results)
-    cout << direction << endl;
+        cout << direction << endl;
     return 0;
 }
