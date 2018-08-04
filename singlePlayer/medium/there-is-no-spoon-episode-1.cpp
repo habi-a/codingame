@@ -10,7 +10,7 @@ int                         main()
     int                     width;
     int                     height;
     string                  response;
-    vector<std::string>     map;
+    vector<string>     map;
     vector<unsigned int>    nodeCoordX;
     vector<unsigned int>    nodeCoordY;
 
