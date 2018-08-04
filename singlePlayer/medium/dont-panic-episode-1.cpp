@@ -7,35 +7,37 @@ using namespace std;
 
 int             main()
 {
-    int         nbFloors; // number of floors
-    int         width; // width of the area
-    int         nbRounds; // maximum number of rounds
-    int         exitFloor; // floor on which the exit is found
-    int         exitPos; // position of the exit on its floor
-    int         nbTotalClones; // number of generated clones
-    int         nbAdditionalElevators; // ignore (always zero)
-    int         nbElevators; // number of elevators
+    int         nbFloors;
+    int         width;
+    int         nbRounds;
+    int         exitFloor;
+    int         exitPos;
+    int         nbTotalClones;
+    int         nbAdditionalElevators;
+    int         nbElevators;
     int         elevators[nbElevators + 1];
 
-    cin >> nbFloors >> width >> nbRounds >> exitFloor >> exitPos >> nbTotalClones >> nbAdditionalElevators >> nbElevators; cin.ignore();
+    cin >> nbFloors >> width >> nbRounds >> exitFloor >> exitPos >> nbTotalClones >> nbAdditionalElevators >> nbElevators; 
+    cin.ignore();
     elevators[exitFloor] = exitPos;
 
     for (int i = 0; i < nbElevators; i++)
     {
-        int     elevatorFloor; // floor on which this elevator is found
-        int     elevatorPos; // position of the elevator on its floor
+        int     elevatorFloor;
+        int     elevatorPos;
+        
         cin >> elevatorFloor >> elevatorPos; cin.ignore();
         elevators[elevatorFloor] = elevatorPos;
     }
 
-    // game loop
     while (1)
     {
-        int     cloneFloor; // floor of the leading clone
-        int     clonePos; // position of the leading clone on its floor
-        string  direction; // direction of the leading clone: LEFT or RIGHT
+        int     cloneFloor;
+        int     clonePos;
+        string  direction;
 
-        cin >> cloneFloor >> clonePos >> direction; cin.ignore();
+        cin >> cloneFloor >> clonePos >> direction; 
+        cin.ignore();
 
         if (elevators[cloneFloor] < clonePos && direction == "RIGHT")
             cout << "BLOCK" << endl;
