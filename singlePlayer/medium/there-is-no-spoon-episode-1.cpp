@@ -58,7 +58,8 @@ int                         main()
             }
         }
 
-        cout << to_string(nodeCoordX[i]) + " " + to_string(nodeCoordY[i]) + " " + to_string(rightN[0]) + " " + to_string(rightN[1]) + " " + to_string(bottomN[0]) + " " + to_string(bottomN[1]) << endl;
+        cout << to_string(nodeCoordX[i]) + " " + to_string(nodeCoordY[i]) + " " + to_string(rightN[0]) + " " + 
+            to_string(rightN[1]) + " " + to_string(bottomN[0]) + " " + to_string(bottomN[1]) << endl;
     }
     return 0;
 }
