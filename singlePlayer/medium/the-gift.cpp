@@ -16,12 +16,11 @@ bool                checkTotal(int C, deque<int> const& budget)
     unsigned int    sum = 0;
 
     for (auto x : budget)
-    sum += x;
+        sum += x;
     return (sum >= C);
 }
 
-void                spendBudget(deque<int> &budget, int first,
-                                const unsigned int pay, int &C)
+void                spendBudget(deque<int> &budget, int first, const unsigned int pay, int &C)
 {
     first -= pay;
     C -= pay;
@@ -48,6 +47,7 @@ int                 main()
     for (int i = 0; i < N; i++)
     {
         int         B;
+        
         cin >> B; cin.ignore();
         budget.push_back(B);
     }
@@ -58,6 +58,7 @@ int                 main()
         for (auto first : budget)
         {
             unsigned int pay = floor(C / budget.size());
+            
             spendBudget(budget, first, pay, C);
         }
     }
