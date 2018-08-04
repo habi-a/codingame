@@ -19,6 +19,7 @@ int                         main()
     for (int i = 0; i < height; i++)
     {
         string              line;
+        
         getline(cin, line);
         map.push_back(line);
         cerr << line << endl;
