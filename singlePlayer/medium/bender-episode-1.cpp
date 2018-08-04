@@ -46,7 +46,10 @@ public:
     bool isBiere(const unsigned int x, const unsigned int y) const { return (_carte[y][x] == 'B'); };
     bool isTeleporteur(const unsigned int x, const unsigned int y) const { return (_carte[y][x] == 'T'); };
     bool isInversor(const unsigned int x, const unsigned int y) const { return (_carte[y][x] == 'I'); };
-    bool isChangeDirection(const unsigned int x, const unsigned int y) const { return (_carte[y][x] == 'N' || _carte[y][x] == 'S' || _carte[y][x] == 'E' || _carte[y][x] == 'W'); };
+    bool isChangeDirection(const unsigned int x, const unsigned int y) const 
+    {
+        return (_carte[y][x] == 'N' || _carte[y][x] == 'S' || _carte[y][x] == 'E' || _carte[y][x] == 'W'); 
+    };
 
     void removeCell(const unsigned int x, const unsigned y) { _carte[y][x] = '_'; };
 
