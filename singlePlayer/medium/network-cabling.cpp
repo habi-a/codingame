@@ -21,8 +21,7 @@ bool                minComparator(int i, int j)
     return (i < j);
 }
 
-void                addLink(vector<int> y_range, auto median_y,
-                        long long int &length)
+void                addLink(vector<int> y_range, auto median_y, long long int &length)
 {
     for (auto y : y_range)
         length += abs(y - median_y);
