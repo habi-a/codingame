@@ -70,6 +70,7 @@ int                     main()
     for (int i = 0; i < H; i++)
     {
         string              LINE;
+        
         getline(cin, LINE);
         auto v = explode(LINE, ' ');
         for (auto x : v)
