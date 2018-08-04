@@ -102,7 +102,8 @@ int                 main()
 
     for (int i = 0; i < N; i++)
     {
-        string W;
+        string      W;
+        
         getline(cin, W);
         dictionary.push_back(W);
     }
