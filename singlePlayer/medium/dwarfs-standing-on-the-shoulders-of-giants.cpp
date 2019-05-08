@@ -9,8 +9,8 @@ using namespace std;
 
 struct Edge 
 {
-	int src;
-	int dest;
+    int src;
+    int dest;
 };
 
 class Graph
@@ -24,7 +24,7 @@ class Graph
     	{
     	    _list_nodes = list_nodes;
     		for (auto &edge: edges)
-    			_adjlist[edge.src].push_back(edge.dest);
+    		    _adjlist[edge.src].push_back(edge.dest);
     	}
         
         unsigned int getMaxNbRelations()
@@ -32,11 +32,11 @@ class Graph
             unsigned int max_nb_relations = 0;
             
             for (int node : _list_nodes) {
-        	    int nb_relations = getNbRelations(node, 1);
-        	    if (nb_relations > max_nb_relations)
-        	        max_nb_relations = nb_relations;
-        	}
-        	return max_nb_relations;
+                int nb_relations = getNbRelations(node, 1);
+        	if (nb_relations > max_nb_relations)
+        	    max_nb_relations = nb_relations;
+            }
+            return max_nb_relations;
         }
         
         unsigned int getNbRelations(int node, int current_nb_relation)
@@ -48,7 +48,7 @@ class Graph
             for (int subnode : _adjlist[node]) {
                 int nb_relations = getNbRelations(subnode, current_nb_relation + 1);
                 if (nb_relations > max_nb_relations)
-        	        max_nb_relations = nb_relations;
+        	    max_nb_relations = nb_relations;
             }
             return max_nb_relations;
         }
