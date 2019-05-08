@@ -23,8 +23,8 @@ class Graph
     	Graph(vector<Edge> const &edges, vector<int> const &list_nodes)
     	{
     	    _list_nodes = list_nodes;
-    		for (auto &edge: edges)
-    		    _adjlist[edge.src].push_back(edge.dest);
+            for (auto &edge: edges)
+                _adjlist[edge.src].push_back(edge.dest);
     	}
         
         unsigned int getMaxNbRelations()
