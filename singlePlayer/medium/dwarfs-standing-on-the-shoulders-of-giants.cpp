@@ -74,8 +74,7 @@ int main()
             list_nodes.push_back(y);
         edges.push_back({ x, y });
     }
-
-	Graph graph(edges, list_nodes);
+    Graph graph(edges, list_nodes);
     cout << graph.getMaxNbRelations() << endl;
     return 0;
 }
